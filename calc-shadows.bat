@@ -62,6 +62,7 @@ goto afterPath
 echo Using saved path to Trackmania.exe from count.txt
 
 :afterPath
+echo This will force close trackmania, anything not saved will be lost.
 set /P "excludeDir=Please enter the name of the folder you want to calc the shadows for: "
 
 tasklist /FI "IMAGENAME eq Trackmania.exe" 2>NUL | find /I /N "Trackmania.exe">NUL
