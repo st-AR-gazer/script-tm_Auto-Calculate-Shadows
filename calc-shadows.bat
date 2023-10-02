@@ -1,14 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-tasklist /FI "IMAGENAME eq Trackmania.exe" 2>NUL | find /I /N "Trackmania.exe">NUL
-if "%ERRORLEVEL%"=="0" (
-    echo Trackmania is currently running. Attempting to close it...
-    taskkill /F /IM "Trackmania.exe"
-    echo Trackmania has been closed. Continuing with the script...
-    timeout /t 3 >nul
-)
-
 set mapsDir=%~dp0
 set mapsDir=%mapsDir:~0,-1%
 for %%A in ("%mapsDir%") do set folderName=%%~nxA
@@ -71,6 +63,14 @@ echo Using saved path to Trackmania.exe from count.txt
 
 :afterPath
 set /P "excludeDir=Please enter the name of the folder you want to calc the shadows for: "
+
+tasklist /FI "IMAGENAME eq Trackmania.exe" 2>NUL | find /I /N "Trackmania.exe">NUL
+if "%ERRORLEVEL%"=="0" (
+    echo Trackmania is currently running. Attempting to close it...
+    taskkill /F /IM "Trackmania.exe"
+    echo Trackmania has been closed. Continuing with the script...
+    timeout /t 3 >nul
+)
 
 start "" "%tmPath%" /computeallshadows="%excludeDir%" /useronly /collections=Stadium /LmQuality=High
 
