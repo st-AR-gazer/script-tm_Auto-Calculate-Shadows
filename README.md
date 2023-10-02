@@ -1,0 +1,1 @@
+# _Auto-Calculate-Shadows-TM-start-script
