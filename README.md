@@ -1,6 +1,6 @@
 # Trackmania Shadow Calculator
 
-This script is designed for Trackmania2020. It automates the process of calculating shadows for a large number of custom maps, menaing you don't have to switch between them to render them, by directly interfacing with the Trackmania executable.
+This script is designed for Trackmania2020. It automates the process of calculating shadows for a large number of custom maps, meaning you don't have to switch between them to render them, by directly interfacing with the Trackmania executable.
 
 ## Overview
 
