@@ -73,7 +73,7 @@ if "%ERRORLEVEL%"=="0" (
     timeout /t 3 >nul
 )
 
-start "" "%tmPath%" /computeallshadows="%excludeDir%" /fullcheck /useronly /collections=Stadium /LmQuality=High
+start "" "%tmPath%" /computeallshadows="%excludeDir%" /fullcheck /useronly /LmQuality=High
 
 :wait
 timeout /t 1 >nul
