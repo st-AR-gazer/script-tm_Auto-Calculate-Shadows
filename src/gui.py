@@ -160,7 +160,7 @@ class MainWindow(QWidget):
         btn_row = QHBoxLayout()
         btn_row.setSpacing(10)
 
-        self.run_btn = QPushButton("Compute Shadows", clicked=self.run)
+        self.run_btn = QPushButton("Calculate Shadows", clicked=self.run)
         self.run_btn.setFixedHeight(36)
         self.run_btn.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         btn_row.addWidget(self.run_btn, 1)
@@ -290,8 +290,6 @@ class MainWindow(QWidget):
         self.log.hide()
 
     def run(self) -> None:
-        """Slot for the *Compute Shadows* button – must stay non-blocking."""
-
         exe = Path(self.tm_edit.text())
         if not exe.exists():
             QMessageBox.warning(
@@ -326,7 +324,7 @@ class MainWindow(QWidget):
         self.busy.hide()
         self._toggle(True)
         QMessageBox.information(
-            self, "Finished", "Shadow calculation completed successfully."
+            self, "Finished", "Shadow calculation exited."
         )
 
     def _toggle(self, on: bool):
